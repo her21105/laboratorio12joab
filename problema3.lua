@@ -1,3 +1,6 @@
+
+local unpack = table.unpack or unpack
+
 local X = {
     {1,2,3},
     {4,5,6},
@@ -15,12 +18,11 @@ local function transpose(M)
             T[j][i] = M[i][j]
         end
     end
-
     return T
 end
 
 local XT = transpose(X)
 
 for _, row in ipairs(XT) do
-    print(table.unpack(row))
+    print(unpack(row))
 end
